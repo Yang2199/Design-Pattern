@@ -1,14 +1,20 @@
 package Command;
 
+import lombok.Data;
+
+@Data
 public class Stock {
 
-    private String name = "ABC";
-    private int quantity = 10;
+    private String name;
 
-    public void buy(){
-        System.out.println("Stock [ Name: "+name+", Quantity: " + quantity +" ] bought");
+    public Stock(String name) {
+        this.name = name;
     }
-    public void sell(){
-        System.out.println("Stock [ Name: "+name+", Quantity: " + quantity +" ] sold");
+
+    public void buy(int quantity){
+        System.out.println("买入股票 [ 名称: "+name+", 数量: " + quantity +" ]");
+    }
+    public void sell(int quantity){
+        System.out.println("卖出股票 [ 名称: "+name+", 数量: " + quantity +" ]");
     }
 }
